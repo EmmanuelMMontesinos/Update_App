@@ -35,7 +35,7 @@ Puedes integrar la clase `UpdateApp` directamente en tu proyecto. A continuació
 #### **Ejemplo básico**
 
 ```python
-from update import Update_App
+import Package_Update.Update as Update_App
 
 # Configura tu aplicación
 update_app = Update_App(
