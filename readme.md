@@ -38,7 +38,7 @@ Puedes integrar la clase `UpdateApp` directamente en tu proyecto. A continuació
 from update import Update_App
 
 # Configura tu aplicación
-update_app = UpdateApp(
+update_app = Update_App(
     name_app="MiAplicacion",
     version_app="1.0",
     url_repository="https://github.com/usuario/repo"
