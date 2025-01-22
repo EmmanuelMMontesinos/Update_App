@@ -33,7 +33,7 @@ class UpdateApp:
         """
         print(f"Buscando actualizaciones para {self.name_app}...")
         if self.check_update():
-            print(f"Actualización disponible para {self.name_app}. Descargando...")
+            print(f"Actualización disponible para {self.name_app}. Descargando...\n")
             path_new_version = self.download_latest()
             if path_new_version != None:
                 self.install(path_new_version)
@@ -57,9 +57,9 @@ class UpdateApp:
                     zip_ref.extract(archivo, path)  # Extrae archivo individualmente
                     barra.update(1)  # Actualiza la barra por cada archivo extraído
 
-        print(f"{self.name_app} instalado correctamente.")
+        print(f"{self.name_app} instalado correctamente.\n")
         os.remove(path_new_version)
-        print(f"Archivo {path_new_version} eliminado.")
+        print(f"Archivo {path_new_version} eliminado.\n")
         print(f"Actualizando 'repo_config.txt'...")
         with open("repo_config.txt", "w") as file:
             file.write(f"name_app-{self.name_app}\n")
@@ -103,10 +103,10 @@ class UpdateApp:
                         file.write(chunk)
                         barra.update(len(chunk))
 
-            print(f"Archivo descargado en: {file_path}")
+            print(f"Archivo descargado en: {file_path}\n")
             return file_path
         else:
-            print(f"Error al obtener información de la release: {response.status_code}")
+            print(f"Error al obtener información de la release: {response.status_code}\n")
             return None
 
 def cli():
@@ -134,7 +134,7 @@ if __name__ == "__main__":
     update_app = UpdateApp("DowYot", "1.0", "https://github.com/EmmanuelMMontesinos/DowYot")
     update_app.update()
 
-    try:
-        cli()
-    except Exception as e:
-        print(f"Revise el archivo 'repo_config.txt' y el repositorio.\nError: {e}")
+    # try:
+    #     cli()
+    # except Exception as e:
+    #     print(f"Revise el archivo 'repo_config.txt' y el repositorio.\nError: {e}")

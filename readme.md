@@ -1,5 +1,7 @@
 # **UpdateApp**
 
+![Update_App](Update_App.jpg)
+
 `UpdateApp` es un paquete/script diseñado para simplificar la tarea de mantener actualizados tus repositorios favoritos (ya sean propios o de terceros) alojados en GitHub. Proporciona dos formas de uso:
 1. Como una clase importable para integrar en tus propios proyectos.
 2. Como un script autónomo que utiliza un archivo de configuración (`repo_config.txt`) para actualizar aplicaciones.
