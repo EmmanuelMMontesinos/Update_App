@@ -129,12 +129,8 @@ def cli():
 
 # CLI para usarlo como script en lugar de clase integrada en tu codigo
 if __name__ == "__main__":
-    # Test
 
-    update_app = UpdateApp("DowYot", "1.0", "https://github.com/EmmanuelMMontesinos/DowYot")
-    update_app.update()
-
-    # try:
-    #     cli()
-    # except Exception as e:
-    #     print(f"Revise el archivo 'repo_config.txt' y el repositorio.\nError: {e}")
+    try:
+        cli()
+    except Exception as e:
+        print(f"Revise el archivo 'repo_config.txt' y el repositorio.\nError: {e}")
