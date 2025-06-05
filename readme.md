@@ -34,16 +34,7 @@ Puedes integrar la clase `UpdateApp` directamente en tu proyecto. A continuació
 
 #### **Ejemplo básico**
 
-```python
-import Package_Update.Update as Update_App
-
-# Configura tu aplicación
-update_app = Update_App(
-    name_app="MiAplicacion",
-    version_app="1.0",
-    url_repository="https://github.com/usuario/repo"
-)
-```
+![Uso](UpdateApp_Uso.png)
 Actualiza tu aplicación si hay una nueva versión
 update_app.update()
 
