@@ -7,6 +7,30 @@ import zipfile
 
 @dataclass(slots=True)
 class UpdateApp:
+    """
+    Clase para actualizar una aplicación desde un repositorio GitHub.
+    Es necesario un archivo llamado 'repo_config.txt' en la ruta raiz del proyecto con la siguiente estructura:
+
+    name_app-Nombre de la aplicación
+    version_app-Versión actual de la aplicación
+    url_repository-URL del repositorio de GitHub
+
+    Ejemplo:
+    name_app-Nombre de la aplicación
+    version_app-Versión actual de la aplicación
+    url_repository-URL del repositorio de GitHub
+
+    El archivo 'repo_config.txt' debe estar en la ruta raiz del proyecto.
+    El archivo 'repo_config.txt' debe estar en el mismo directorio que el archivo 'Update.py'.
+    El archivo 'repo_config.txt' debe estar en el mismo directorio que el archivo 'Update.py'.
+
+    Args:
+        name_app (str): Nombre de la aplicación
+        version_app (str): Versión actual de la aplicación
+        url_repository (str): URL del repositorio de GitHub
+        latest_version (str): Versión actual de la aplicación
+
+    """
     name_app: str
     version_app: str
     url_repository: str
@@ -42,9 +66,11 @@ class UpdateApp:
                 self.install(path_new_version)
         else:
             print(f"{self.name_app} ya está actualizado.")
-    def install(self,path_new_version):
+    def install(self,path_new_version:str):
         """
         Instala la nueva versión descargada.
+        Args:
+            path_new_version (str): Ruta del archivo ZIP de la nueva versión
         """
         path = os.path.dirname(path_new_version)  # Obtiene el directorio donde se descomprimirá
         print(f"Instalando {self.name_app}...")
